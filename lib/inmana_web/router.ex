@@ -6,7 +6,12 @@ defmodule InmanaWeb.Router do
   end
 
   scope "/api", InmanaWeb do
+    # pipe_through: the pipeline called :api, defined at line 4 will be used here as a middleware
     pipe_through :api
+
+    get "/", WelcomeController, :index
+
+    post "/restaurants", RestaurantsController, :create
   end
 
   # Enables LiveDashboard only for development

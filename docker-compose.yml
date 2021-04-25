@@ -1,0 +1,31 @@
+version: "3.4"
+
+networks:
+  application: {}
+
+services:
+  database:
+    ports:
+    - 5432:5432
+    networks:
+    - application
+    environment:
+      POSTGRES_DB: inmana_dev
+      POSTGRES_USER: user
+    image: postgres:11.2-alpine
+
+  # application:
+  #   depends_on:
+  #   - database
+  #   networks:
+  #   - application
+  #   build:
+  #     context: "."
+  #     target: compiler
+  #   ports:
+  #   - 4000:4000
+  #   volumes:
+  #   - .:/srv/app:Z
+  #   environment:
+  #     POSTGRES_URL: postgres://user@database/inmana_dev
+  #   command: sh -c "mix setup && mix phx.server"
