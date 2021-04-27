@@ -6,9 +6,9 @@ networks:
 services:
   database:
     ports:
-    - 5432:5432
+      - 5435:5432
     networks:
-    - application
+      - application
     environment:
       POSTGRES_DB: inmana_dev
       POSTGRES_USER: user
