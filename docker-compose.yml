@@ -13,6 +13,8 @@ services:
       POSTGRES_DB: inmana_dev
       POSTGRES_USER: user
     image: postgres:11.2-alpine
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
 
   # application:
   #   depends_on:
