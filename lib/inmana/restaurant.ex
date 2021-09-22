@@ -1,7 +1,9 @@
 defmodule Inmana.Restaurant do
+  # The `use` macro allows you to inject any code in the current module.
   use Ecto.Schema
+  # imports all public functions and macros from given module except the ones starting with underscore, for example, __build__.
   import Ecto.Changeset
-
+  # `alias/2` gives module an alternative name and `alias/1` just the sufix
   alias Inmana.Supply
 
   # module variable, maybe aka private variable
