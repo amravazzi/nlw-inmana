@@ -11,7 +11,8 @@ config :inmana, Inmana.Repo,
   database: "inmana_dev",
   database: "inmana_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+  pool: Ecto.Adapters.SQL.Sandbox,
+  port: 5435
 
 config :inmana, Inmana.Mailer, adapter: Bamboo.TestAdapter
 
